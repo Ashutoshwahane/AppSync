@@ -1,0 +1,73 @@
+{
+    "UserAgent": "aws-amplify-cli/2.0",
+    "Version": "1.0",
+    "auth": {
+        "plugins": {
+            "awsCognitoAuthPlugin": {
+                "UserAgent": "aws-amplify/cli",
+                "Version": "0.1.0",
+                "IdentityManager": {
+                    "Default": {}
+                },
+                "CredentialsProvider": {
+                    "CognitoIdentity": {
+                        "Default": {
+                            "PoolId": "us-east-1:577213be-322c-4688-bb14-3439b261f8f3",
+                            "Region": "us-east-1"
+                        }
+                    }
+                },
+                "CognitoUserPool": {
+                    "Default": {
+                        "PoolId": "us-east-1_xRiwxbysG",
+                        "AppClientId": "kl2ofk8rk1d0t81ui1rk9j9cg",
+                        "Region": "us-east-1"
+                    }
+                },
+                "Auth": {
+                    "Default": {
+                        "authenticationFlowType": "CUSTOM_AUTH"
+                    }
+                },
+                "S3TransferUtility": {
+                    "Default": {
+                        "bucket": "simpleenergy-commonbuckettest",
+                        "region": "ap-south-1"
+                    }
+                }
+            }
+        }
+    },
+    "api": {
+        "plugins": {
+          "awsAPIPlugin": {
+            "SE-dev-appsync": {
+              "endpointType": "GraphQL",
+              "endpoint": "https://api-dev.simpleenergy.in/graphql",
+              "region": "us-east-1",
+              "authorizationType": "AWS_IAM"
+            }
+          },
+            "awsCognitoAuthPlugin": {
+                "CredentialsProvider": {
+                    "CognitoIdentity": {
+                        "Default": {
+                            "PoolId": "us-east-1:577213be-322c-4688-bb14-3439b261f8f3",
+                            "Region": "us-east-1"
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    "storage": {
+        "plugins": {
+            "awsS3StoragePlugin": {
+                "bucket": "simpleenergy-commonbuckettest",
+                "region": "ap-south-1",
+                "defaultAccessLevel": "guest"
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+query GetUserById($userId: ID!) {
+    getUserById(userId: $userId) {
+        email
+        email_verified
+        id
+        mobile
+        name
+        primary_vin
+        profile_picture
+        erc_arr {
+            erc_contact_no
+            id
+            erc_name
+            is_primary_erc
+        }
+    }
+}

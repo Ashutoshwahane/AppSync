@@ -1,0 +1,12 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositories {
+        maven {url "https://plugins.gradle.org/m2/"}
+        google()
+        mavenCentral()
+
+    }
+}
+rootProject.name = "AppSync"
+include ':app'
